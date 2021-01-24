@@ -1,0 +1,125 @@
+\hypertarget{uart-comport_8h}{}\doxysection{Core/\+Inc/uart-\/comport.h File Reference}
+\label{uart-comport_8h}\index{Core/Inc/uart-\/comport.h@{Core/Inc/uart-\/comport.h}}
+{\ttfamily \#include \char`\"{}stm32l4xx\+\_\+hal.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{uart-comport_8h_aa64339de791f4671140e0dab07219156}{uatr\+\_\+comport\+\_\+comunication\+\_\+init}} (UART\+\_\+\+Handle\+Type\+Def $\ast$huart)
+\item 
+void \mbox{\hyperlink{uart-comport_8h_a6a062742ed62532207468be67115406d}{uatr\+\_\+comport\+\_\+read\+\_\+data}} (void)
+\item 
+void \mbox{\hyperlink{uart-comport_8h_a2cc441e72458643cd3d0d193f84277f3}{uatr\+\_\+comport\+\_\+send\+\_\+data}} (uint8\+\_\+t $\ast$data, uint8\+\_\+t data\+\_\+len)
+\item 
+void \mbox{\hyperlink{uart-comport_8h_a57e6636d5b06b085ccd24ab3857e6b19}{uart\+\_\+comport\+\_\+task}} (void($\ast$\mbox{\hyperlink{main_8c_acbfb668d7b4cfa39aa1a5a5dac3c0e7e}{task}})(void))
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+UART\+\_\+\+Handle\+Type\+Def $\ast$ \mbox{\hyperlink{uart-comport_8h_ad157c3b4638800ad3d4aba64704c92e7}{com\+\_\+huart}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{uart-comport_8h_a63cad39e0261fa7a7f3808169dd9cf95}{start\+\_\+speed}} \mbox{[}3\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{uart-comport_8h_a643806517260ae020fe055edde423dca}{stop\+\_\+speed}} \mbox{[}3\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Michał Pałka
+\end{DoxyAuthor}
+
+\begin{DoxyPre}
+This is include file for uart-\/comport communication driver.
+It is used for receiving measurement configuration commands.
+Every command has to contain 9 characters.
+
+PROTOCOL:
+"{}XXX YYY\(\backslash\)t\(\backslash\)n"{}
+
+XXX -\/   start measurement speed
+YYY -\/   stop measurement speed
+
+When XXX<YYY then it triggered the measurement
+e.g. "{}010 060\(\backslash\)t\(\backslash\)n"{} will triggered measurement of acceleration from 10 to 60 kmpk and "{}measurement accepted\(\backslash\)n"{} will be send to the comport.
+
+When XXX==YYY then it cancel the measurement
+e.g. "{}000 000\(\backslash\)t\(\backslash\)n"{} will cancelled measurement and "{}measurement cancelled\(\backslash\)n"{} will be send to the comport.
+
+When XXX>YYY nothing happened
+e.g. "{}100 000\(\backslash\)t\(\backslash\)n"{} the "{}stop 0 less then start 100\(\backslash\)n"{} will be send to the comport.
+\end{DoxyPre}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{uart-comport_8h_a57e6636d5b06b085ccd24ab3857e6b19}\label{uart-comport_8h_a57e6636d5b06b085ccd24ab3857e6b19}} 
+\index{uart-\/comport.h@{uart-\/comport.h}!uart\_comport\_task@{uart\_comport\_task}}
+\index{uart\_comport\_task@{uart\_comport\_task}!uart-\/comport.h@{uart-\/comport.h}}
+\doxysubsubsection{\texorpdfstring{uart\_comport\_task()}{uart\_comport\_task()}}
+{\footnotesize\ttfamily void uart\+\_\+comport\+\_\+task (\begin{DoxyParamCaption}\item[{void($\ast$)(void)}]{task }\end{DoxyParamCaption})}
+
+uart\+\_\+comport\+\_\+task is a function that should be placed inside main infinitive loop. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em task} & is a function pointer to a function which shoud be triggered to handle message. It is implemented in the \char`\"{}main.\+c\char`\"{} file. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{uart-comport_8h_aa64339de791f4671140e0dab07219156}\label{uart-comport_8h_aa64339de791f4671140e0dab07219156}} 
+\index{uart-\/comport.h@{uart-\/comport.h}!uatr\_comport\_comunication\_init@{uatr\_comport\_comunication\_init}}
+\index{uatr\_comport\_comunication\_init@{uatr\_comport\_comunication\_init}!uart-\/comport.h@{uart-\/comport.h}}
+\doxysubsubsection{\texorpdfstring{uatr\_comport\_comunication\_init()}{uatr\_comport\_comunication\_init()}}
+{\footnotesize\ttfamily void uatr\+\_\+comport\+\_\+comunication\+\_\+init (\begin{DoxyParamCaption}\item[{UART\+\_\+\+Handle\+Type\+Def $\ast$}]{huart }\end{DoxyParamCaption})}
+
+uatr\+\_\+comport\+\_\+comunication\+\_\+init is a function to initialize connection 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em huart} & is a pointer to UART\+\_\+\+Handle\+Type\+Def used to communicate with comport. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{uart-comport_8h_a6a062742ed62532207468be67115406d}\label{uart-comport_8h_a6a062742ed62532207468be67115406d}} 
+\index{uart-\/comport.h@{uart-\/comport.h}!uatr\_comport\_read\_data@{uatr\_comport\_read\_data}}
+\index{uatr\_comport\_read\_data@{uatr\_comport\_read\_data}!uart-\/comport.h@{uart-\/comport.h}}
+\doxysubsubsection{\texorpdfstring{uatr\_comport\_read\_data()}{uatr\_comport\_read\_data()}}
+{\footnotesize\ttfamily void uatr\+\_\+comport\+\_\+read\+\_\+data (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+uatr\+\_\+comport\+\_\+read\+\_\+data is a function used to read data from Rx buffer to start\+\_\+speed and stop\+\_\+speed. \mbox{\Hypertarget{uart-comport_8h_a2cc441e72458643cd3d0d193f84277f3}\label{uart-comport_8h_a2cc441e72458643cd3d0d193f84277f3}} 
+\index{uart-\/comport.h@{uart-\/comport.h}!uatr\_comport\_send\_data@{uatr\_comport\_send\_data}}
+\index{uatr\_comport\_send\_data@{uatr\_comport\_send\_data}!uart-\/comport.h@{uart-\/comport.h}}
+\doxysubsubsection{\texorpdfstring{uatr\_comport\_send\_data()}{uatr\_comport\_send\_data()}}
+{\footnotesize\ttfamily void uatr\+\_\+comport\+\_\+send\+\_\+data (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{uint8\+\_\+t}]{data\+\_\+len }\end{DoxyParamCaption})}
+
+uatr\+\_\+comport\+\_\+send\+\_\+data is a function used to send message to comport. It sends data in non-\/blocking mode. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & is a pointer to sending data \\
+\hline
+\mbox{\texttt{ in}}  & {\em data\+\_\+len} & is length of data to send\\
+\hline
+\end{DoxyParams}
+It should be placed inside\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void} \mbox{\hyperlink{main_8c_ae494a9643f29b87d6d81e5264e60e57b}{HAL\_UART\_RxCpltCallback}}(UART\_HandleTypeDef *huart)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if}(huart == \&huart1) \mbox{\hyperlink{uart-comport_8c_a095104a7832f1ee7897ecab94c3b0256}{uatr\_comport\_read\_data}}();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{uart-comport_8h_ad157c3b4638800ad3d4aba64704c92e7}\label{uart-comport_8h_ad157c3b4638800ad3d4aba64704c92e7}} 
+\index{uart-\/comport.h@{uart-\/comport.h}!com\_huart@{com\_huart}}
+\index{com\_huart@{com\_huart}!uart-\/comport.h@{uart-\/comport.h}}
+\doxysubsubsection{\texorpdfstring{com\_huart}{com\_huart}}
+{\footnotesize\ttfamily UART\+\_\+\+Handle\+Type\+Def$\ast$ com\+\_\+huart}
+
+Pointer to UART handler structure used to communicate with comport. \mbox{\Hypertarget{uart-comport_8h_a63cad39e0261fa7a7f3808169dd9cf95}\label{uart-comport_8h_a63cad39e0261fa7a7f3808169dd9cf95}} 
+\index{uart-\/comport.h@{uart-\/comport.h}!start\_speed@{start\_speed}}
+\index{start\_speed@{start\_speed}!uart-\/comport.h@{uart-\/comport.h}}
+\doxysubsubsection{\texorpdfstring{start\_speed}{start\_speed}}
+{\footnotesize\ttfamily uint8\+\_\+t start\+\_\+speed\mbox{[}3\mbox{]}}
+
+buffer for start measurement speed \mbox{\Hypertarget{uart-comport_8h_a643806517260ae020fe055edde423dca}\label{uart-comport_8h_a643806517260ae020fe055edde423dca}} 
+\index{uart-\/comport.h@{uart-\/comport.h}!stop\_speed@{stop\_speed}}
+\index{stop\_speed@{stop\_speed}!uart-\/comport.h@{uart-\/comport.h}}
+\doxysubsubsection{\texorpdfstring{stop\_speed}{stop\_speed}}
+{\footnotesize\ttfamily uint8\+\_\+t stop\+\_\+speed\mbox{[}3\mbox{]}}
+
+buffer for stop measurement speed 

@@ -1,0 +1,12 @@
+libNMEA.c:49:13:default_CB	4	static
+libNMEA.c:51:13:NMEA_CB_register	24	static
+libNMEA.c:74:13:NMEA_CB_unregister	16	static
+libNMEA.c:99:14:NMEA_parser	216	static
+libNMEA.c:180:16:hx2int	16	static
+libNMEA.c:196:20:NMEA_checksum_clc	24	static
+libNMEA.c:216:13:NMEA_read_line	16	static
+libNMEA.c:235:6:NMEA_init	16	static
+libNMEA.c:255:20:NMEA_UART_DMA_get_char	24	static
+libNMEA.c:285:20:NMEA_UART_DMA_copy_buffer	24	static
+libNMEA.c:303:13:NMEA_process_task	16	static
+libNMEA.c:314:13:user_UART_IDLE_IT_handler	16	static

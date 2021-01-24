@@ -1,0 +1,133 @@
+\hypertarget{i2c-lcd_8c}{}\doxysection{Core/\+Src/i2c-\/lcd.c File Reference}
+\label{i2c-lcd_8c}\index{Core/Src/i2c-\/lcd.c@{Core/Src/i2c-\/lcd.c}}
+{\ttfamily \#include \char`\"{}i2c-\/lcd.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{i2c-lcd_8c_a16b338f4ba8614530cf7e484066f29c5}\label{i2c-lcd_8c_a16b338f4ba8614530cf7e484066f29c5}} 
+\#define {\bfseries SLAVE\+\_\+\+ADDRESS\+\_\+\+LCD}~0x4E
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{i2c-lcd_8c_a0934da706080d3b0b3b2f04c9d044e67}{lcd\+\_\+send\+\_\+cmd}} (char cmd)
+\item 
+void \mbox{\hyperlink{i2c-lcd_8c_ac6c9650fc3a35bf393a6bf535e6d0b9f}{lcd\+\_\+send\+\_\+data}} (char data)
+\item 
+void \mbox{\hyperlink{i2c-lcd_8c_ad235a86241458b1e7b8771688bfdaf9a}{lcd\+\_\+clear}} (void)
+\item 
+void \mbox{\hyperlink{i2c-lcd_8c_a335c8a975c28b9eb7ee6c27a6efe7c44}{lcd\+\_\+put\+\_\+cur}} (int row, int col)
+\item 
+\mbox{\Hypertarget{i2c-lcd_8c_a6842775ba83d166f02b8fef8bb63b1e6}\label{i2c-lcd_8c_a6842775ba83d166f02b8fef8bb63b1e6}} 
+void {\bfseries lcd\+\_\+init} (void)
+\item 
+void \mbox{\hyperlink{i2c-lcd_8c_a234ae1cb5d91fa756d1216e3540222ad}{lcd\+\_\+send\+\_\+string}} (char $\ast$str)
+\item 
+void \mbox{\hyperlink{i2c-lcd_8c_aa258e0eb52bbc34002a46dc2db89a84b}{HAL\+\_\+\+I2\+C\+\_\+\+Master\+Tx\+Cplt\+Callback}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$hi2c)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+I2\+C\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{i2c-lcd_8c_af7b2c26e44dadaaa798a5c3d82914ba7}{hi2c1}}
+\item 
+char \mbox{\hyperlink{i2c-lcd_8c_a0b0454511d8d8d8dec74da7d0f7de4ac}{data\+\_\+to\+\_\+sent}} \mbox{[}32 $\ast$4\mbox{]} =\{0\}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{i2c-lcd_8c_a1e6927fa1486224044e568f9c370519b}{id}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+\href{https://controllerstech.com/i2c-lcd-in-stm32/}{\texttt{ https\+://controllerstech.\+com/i2c-\/lcd-\/in-\/stm32/}} 
+
+Michał Pałka
+\end{DoxyAuthor}
+In this file there is implementation of i2c-\/lcd library. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{i2c-lcd_8c_aa258e0eb52bbc34002a46dc2db89a84b}\label{i2c-lcd_8c_aa258e0eb52bbc34002a46dc2db89a84b}} 
+\index{i2c-\/lcd.c@{i2c-\/lcd.c}!HAL\_I2C\_MasterTxCpltCallback@{HAL\_I2C\_MasterTxCpltCallback}}
+\index{HAL\_I2C\_MasterTxCpltCallback@{HAL\_I2C\_MasterTxCpltCallback}!i2c-\/lcd.c@{i2c-\/lcd.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_I2C\_MasterTxCpltCallback()}{HAL\_I2C\_MasterTxCpltCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+I2\+C\+\_\+\+Master\+Tx\+Cplt\+Callback (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{hi2c }\end{DoxyParamCaption})}
+
+HAL\+\_\+\+I2\+C\+\_\+\+Master\+Tx\+Cplt\+Callback is called when i2c transmission is completed and zeros Tx buffer. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em hi2c} & pointer to i2c handle structure \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{i2c-lcd_8c_ad235a86241458b1e7b8771688bfdaf9a}\label{i2c-lcd_8c_ad235a86241458b1e7b8771688bfdaf9a}} 
+\index{i2c-\/lcd.c@{i2c-\/lcd.c}!lcd\_clear@{lcd\_clear}}
+\index{lcd\_clear@{lcd\_clear}!i2c-\/lcd.c@{i2c-\/lcd.c}}
+\doxysubsubsection{\texorpdfstring{lcd\_clear()}{lcd\_clear()}}
+{\footnotesize\ttfamily void lcd\+\_\+clear (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+lcd\+\_\+clear sends commands to clear LCD display. It works in blocking mode but it sends only two command character (8 sign) so I decided not to change it. \mbox{\Hypertarget{i2c-lcd_8c_a335c8a975c28b9eb7ee6c27a6efe7c44}\label{i2c-lcd_8c_a335c8a975c28b9eb7ee6c27a6efe7c44}} 
+\index{i2c-\/lcd.c@{i2c-\/lcd.c}!lcd\_put\_cur@{lcd\_put\_cur}}
+\index{lcd\_put\_cur@{lcd\_put\_cur}!i2c-\/lcd.c@{i2c-\/lcd.c}}
+\doxysubsubsection{\texorpdfstring{lcd\_put\_cur()}{lcd\_put\_cur()}}
+{\footnotesize\ttfamily void lcd\+\_\+put\+\_\+cur (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption})}
+
+lcd\+\_\+put\+\_\+cur sends command to set cursor in given position on LCD. It works in blocking mode but it sends only one command character (4 sign) so I decided not to change it. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em row} & row cursor position, range \mbox{[}0-\/1\mbox{]} \\
+\hline
+\mbox{\texttt{ in}}  & {\em col} & column cursor position, range \mbox{[}0-\/15\mbox{]} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{i2c-lcd_8c_a0934da706080d3b0b3b2f04c9d044e67}\label{i2c-lcd_8c_a0934da706080d3b0b3b2f04c9d044e67}} 
+\index{i2c-\/lcd.c@{i2c-\/lcd.c}!lcd\_send\_cmd@{lcd\_send\_cmd}}
+\index{lcd\_send\_cmd@{lcd\_send\_cmd}!i2c-\/lcd.c@{i2c-\/lcd.c}}
+\doxysubsubsection{\texorpdfstring{lcd\_send\_cmd()}{lcd\_send\_cmd()}}
+{\footnotesize\ttfamily void lcd\+\_\+send\+\_\+cmd (\begin{DoxyParamCaption}\item[{char}]{cmd }\end{DoxyParamCaption})}
+
+lcd\+\_\+send\+\_\+cmd function sends character to 1602 LCS as a command. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cmd} & command char\\
+\hline
+\end{DoxyParams}
+Unfortunately it works in blocking mode. However there is up to 8 signs (2 command characters) to sent via i2c in one time, so I decided not to change it. \mbox{\Hypertarget{i2c-lcd_8c_ac6c9650fc3a35bf393a6bf535e6d0b9f}\label{i2c-lcd_8c_ac6c9650fc3a35bf393a6bf535e6d0b9f}} 
+\index{i2c-\/lcd.c@{i2c-\/lcd.c}!lcd\_send\_data@{lcd\_send\_data}}
+\index{lcd\_send\_data@{lcd\_send\_data}!i2c-\/lcd.c@{i2c-\/lcd.c}}
+\doxysubsubsection{\texorpdfstring{lcd\_send\_data()}{lcd\_send\_data()}}
+{\footnotesize\ttfamily void lcd\+\_\+send\+\_\+data (\begin{DoxyParamCaption}\item[{char}]{data }\end{DoxyParamCaption})}
+
+lcd\+\_\+send\+\_\+data in original implementation was sending single character (4 sign) via i2c in blocking mode. It was called in the loop for every character in the lcd\+\_\+send\+\_\+string, so it could take even 10 ms to send whole line to the display. It was unacceptable for me so now it adds data to i2c Tx buffer which is sending in non-\/blocking mode. 
+\begin{DoxyParams}{Parameters}
+{\em data} & data char which is adding to Tx buffer \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{i2c-lcd_8c_a234ae1cb5d91fa756d1216e3540222ad}\label{i2c-lcd_8c_a234ae1cb5d91fa756d1216e3540222ad}} 
+\index{i2c-\/lcd.c@{i2c-\/lcd.c}!lcd\_send\_string@{lcd\_send\_string}}
+\index{lcd\_send\_string@{lcd\_send\_string}!i2c-\/lcd.c@{i2c-\/lcd.c}}
+\doxysubsubsection{\texorpdfstring{lcd\_send\_string()}{lcd\_send\_string()}}
+{\footnotesize\ttfamily void lcd\+\_\+send\+\_\+string (\begin{DoxyParamCaption}\item[{char $\ast$}]{str }\end{DoxyParamCaption})}
+
+lcd\+\_\+send\+\_\+string sends data to LCD in non blocking mode (in my implementation). 
+\begin{DoxyParams}{Parameters}
+{\em str} & pointer to sending data \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{i2c-lcd_8c_a0b0454511d8d8d8dec74da7d0f7de4ac}\label{i2c-lcd_8c_a0b0454511d8d8d8dec74da7d0f7de4ac}} 
+\index{i2c-\/lcd.c@{i2c-\/lcd.c}!data\_to\_sent@{data\_to\_sent}}
+\index{data\_to\_sent@{data\_to\_sent}!i2c-\/lcd.c@{i2c-\/lcd.c}}
+\doxysubsubsection{\texorpdfstring{data\_to\_sent}{data\_to\_sent}}
+{\footnotesize\ttfamily char data\+\_\+to\+\_\+sent\mbox{[}32 $\ast$4\mbox{]} =\{0\}}
+
+i2c Tx buffer \mbox{\Hypertarget{i2c-lcd_8c_af7b2c26e44dadaaa798a5c3d82914ba7}\label{i2c-lcd_8c_af7b2c26e44dadaaa798a5c3d82914ba7}} 
+\index{i2c-\/lcd.c@{i2c-\/lcd.c}!hi2c1@{hi2c1}}
+\index{hi2c1@{hi2c1}!i2c-\/lcd.c@{i2c-\/lcd.c}}
+\doxysubsubsection{\texorpdfstring{hi2c1}{hi2c1}}
+{\footnotesize\ttfamily I2\+C\+\_\+\+Handle\+Type\+Def hi2c1\hspace{0.3cm}{\ttfamily [extern]}}
+
+i2c handle structure for hi2c conected to LCD display \mbox{\Hypertarget{i2c-lcd_8c_a1e6927fa1486224044e568f9c370519b}\label{i2c-lcd_8c_a1e6927fa1486224044e568f9c370519b}} 
+\index{i2c-\/lcd.c@{i2c-\/lcd.c}!id@{id}}
+\index{id@{id}!i2c-\/lcd.c@{i2c-\/lcd.c}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily uint8\+\_\+t id}
+
+counter of sending message characters. It increments after every 4 sign added to Tx buffer, and zeros when all characters are added 

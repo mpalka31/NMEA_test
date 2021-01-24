@@ -1,0 +1,476 @@
+\hypertarget{main_8c}{}\doxysection{Core/\+Src/main.c File Reference}
+\label{main_8c}\index{Core/Src/main.c@{Core/Src/main.c}}
+
+
+\+: Main program body  
+
+
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}i2c-\/lcd.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}uart-\/comport.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8c_a70af21c671abfcc773614a9a4f63d920}{System\+Clock\+\_\+\+Config}} (void)
+\begin{DoxyCompactList}\small\item\em System Clock Configuration. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{main_8c_ae89fdd15729ad41a66911190fcbab23a}{MX\+\_\+\+GPIO\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em GPIO Initialization Function. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{main_8c_a608dc9e9bcaf978f1611f3ec57670f64}{MX\+\_\+\+DMA\+\_\+\+Init}} (void)
+\item 
+static void \mbox{\hyperlink{main_8c_a54efad17c8fe43c948873060c880d1a5}{MX\+\_\+\+DFSDM1\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em DFSDM1 Initialization Function. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{main_8c_af71812af4fbb9ebbe0f681165b657433}{MX\+\_\+\+I2\+C2\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em I2\+C2 Initialization Function. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{main_8c_a235a6a2390a0390247a052c05cc07dd4}{MX\+\_\+\+QUADSPI\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em QUADSPI Initialization Function. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{main_8c_ad13211e797777a447435fa0b54dcac7c}{MX\+\_\+\+SPI3\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em SPI3 Initialization Function. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{main_8c_a62f4b77e20bccafe98a183771749c20c}{MX\+\_\+\+USART1\+\_\+\+UART\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em USART1 Initialization Function. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{main_8c_a1c98cc38e233c6b46ca2bf9598a5fce8}{MX\+\_\+\+USART3\+\_\+\+UART\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em USART3 Initialization Function. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{main_8c_a03b71abc2ed6e7a94a08e94b1d74542f}{MX\+\_\+\+USB\+\_\+\+OTG\+\_\+\+FS\+\_\+\+PCD\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em USB\+\_\+\+OTG\+\_\+\+FS Initialization Function. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{main_8c_ada2fde91c9d08b4055b4d171690255d0}{MX\+\_\+\+UART4\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em UART4 Initialization Function. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{main_8c_a4230d11f81d0b16e112f1cc3f40cb42f}{MX\+\_\+\+I2\+C1\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em I2\+C1 Initialization Function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_ae494a9643f29b87d6d81e5264e60e57b}{HAL\+\_\+\+UART\+\_\+\+Rx\+Cplt\+Callback}} (UART\+\_\+\+Handle\+Type\+Def $\ast$huart)
+\item 
+void \mbox{\hyperlink{main_8c_abcdf9b59049eccbc87d54042f9235b1a}{HAL\+\_\+\+UART\+\_\+\+Tx\+Cplt\+Callback}} (UART\+\_\+\+Handle\+Type\+Def $\ast$huart)
+\item 
+void \mbox{\hyperlink{main_8c_a12c51482ea332e9be9b144538f757fb2}{stop\+\_\+measure\+\_\+speed\+\_\+\+CB}} (void)
+\item 
+void \mbox{\hyperlink{main_8c_ab136d3a99b92df42a34581f2e19eade7}{start\+\_\+measure\+\_\+speed\+\_\+\+CB}} (void)
+\item 
+void \mbox{\hyperlink{main_8c_acbfb668d7b4cfa39aa1a5a5dac3c0e7e}{task}} (void)
+\item 
+void \mbox{\hyperlink{main_8c_a531a08977e7977fb6f555793f2e06fb8}{speedometer\+\_\+\+CB}} (void)
+\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em The application entry point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a1730ffe1e560465665eb47d9264826f9}{Error\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function is executed in case of error occurrence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_a9bb0868d234e6b0841783572c64fb8c2}\label{main_8c_a9bb0868d234e6b0841783572c64fb8c2}} 
+DFSDM\+\_\+\+Channel\+\_\+\+Handle\+Type\+Def {\bfseries hdfsdm1\+\_\+channel1}
+\item 
+I2\+C\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8c_af7b2c26e44dadaaa798a5c3d82914ba7}{hi2c1}}
+\item 
+\mbox{\Hypertarget{main_8c_ac379bcc152d860f08b1279fd3e232295}\label{main_8c_ac379bcc152d860f08b1279fd3e232295}} 
+I2\+C\+\_\+\+Handle\+Type\+Def {\bfseries hi2c2}
+\item 
+\mbox{\Hypertarget{main_8c_ae818b2c2c207642468860f8fa7cbe56f}\label{main_8c_ae818b2c2c207642468860f8fa7cbe56f}} 
+QSPI\+\_\+\+Handle\+Type\+Def {\bfseries hqspi}
+\item 
+\mbox{\Hypertarget{main_8c_aec51920045aad7f70cbfd1f58228d866}\label{main_8c_aec51920045aad7f70cbfd1f58228d866}} 
+SPI\+\_\+\+Handle\+Type\+Def {\bfseries hspi3}
+\item 
+\mbox{\Hypertarget{main_8c_ae273feb3e0dc44e38892650faa58fced}\label{main_8c_ae273feb3e0dc44e38892650faa58fced}} 
+UART\+\_\+\+Handle\+Type\+Def {\bfseries huart4}
+\item 
+\mbox{\Hypertarget{main_8c_a2cf715bef37f7e8ef385a30974a5f0d5}\label{main_8c_a2cf715bef37f7e8ef385a30974a5f0d5}} 
+UART\+\_\+\+Handle\+Type\+Def {\bfseries huart1}
+\item 
+\mbox{\Hypertarget{main_8c_ab7c63c1b0f65db92b6a4ea19edf957e1}\label{main_8c_ab7c63c1b0f65db92b6a4ea19edf957e1}} 
+UART\+\_\+\+Handle\+Type\+Def {\bfseries huart3}
+\item 
+DMA\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8c_a5531b2fb5af9f7c77f321c4a957d662b}{hdma\+\_\+uart4\+\_\+rx}}
+\item 
+\mbox{\Hypertarget{main_8c_a3ec0d70a6cb9406d997fb3d006cc940d}\label{main_8c_a3ec0d70a6cb9406d997fb3d006cc940d}} 
+PCD\+\_\+\+Handle\+Type\+Def {\bfseries hpcd\+\_\+\+USB\+\_\+\+OTG\+\_\+\+FS}
+\item 
+int \mbox{\hyperlink{main_8c_a42715f65f02da52edc5b22021d8ae670}{time}}
+\item 
+int \mbox{\hyperlink{main_8c_a37722a150250e2a5a98e5e0d11e53449}{start}} = 0
+\item 
+int \mbox{\hyperlink{main_8c_a6c0af9f2e97842405fb15ed952ef2976}{stop}} = 0
+\item 
+uint8\+\_\+t \mbox{\hyperlink{main_8c_ae5cb355aaa3865eeb63df01488001068}{message}} \mbox{[}50\mbox{]} =\{0\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\+: Main program body 
+
+\begin{DoxyAuthor}{Author}
+Michał Pałka
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} Copyright (c) 2020 STMicroelectronics. All rights reserved.\end{center} }
+
+This software component is licensed by ST under BSD 3-\/Clause license, the \char`\"{}\+License\char`\"{}; You may not use this file except in compliance with the License. You may obtain a copy of the License at\+: opensource.\+org/licenses/\+BSD-\/3-\/\+Clause 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_a1730ffe1e560465665eb47d9264826f9}\label{main_8c_a1730ffe1e560465665eb47d9264826f9}} 
+\index{main.c@{main.c}!Error\_Handler@{Error\_Handler}}
+\index{Error\_Handler@{Error\_Handler}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Error\_Handler()}{Error\_Handler()}}
+{\footnotesize\ttfamily void Error\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function is executed in case of error occurrence. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{main_8c_ae494a9643f29b87d6d81e5264e60e57b}\label{main_8c_ae494a9643f29b87d6d81e5264e60e57b}} 
+\index{main.c@{main.c}!HAL\_UART\_RxCpltCallback@{HAL\_UART\_RxCpltCallback}}
+\index{HAL\_UART\_RxCpltCallback@{HAL\_UART\_RxCpltCallback}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_UART\_RxCpltCallback()}{HAL\_UART\_RxCpltCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+UART\+\_\+\+Rx\+Cplt\+Callback (\begin{DoxyParamCaption}\item[{UART\+\_\+\+Handle\+Type\+Def $\ast$}]{huart }\end{DoxyParamCaption})}
+
+HAL\+\_\+\+UART\+\_\+\+Rx\+Cplt\+Callback is triggered after end of UART Rx transmission. It calls \mbox{\hyperlink{uart-comport_8c_a095104a7832f1ee7897ecab94c3b0256}{uatr\+\_\+comport\+\_\+read\+\_\+data()}} from uart-\/comport driver. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em huart} & is a pointer to UART handle structure \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8c_abcdf9b59049eccbc87d54042f9235b1a}\label{main_8c_abcdf9b59049eccbc87d54042f9235b1a}} 
+\index{main.c@{main.c}!HAL\_UART\_TxCpltCallback@{HAL\_UART\_TxCpltCallback}}
+\index{HAL\_UART\_TxCpltCallback@{HAL\_UART\_TxCpltCallback}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_UART\_TxCpltCallback()}{HAL\_UART\_TxCpltCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+UART\+\_\+\+Tx\+Cplt\+Callback (\begin{DoxyParamCaption}\item[{UART\+\_\+\+Handle\+Type\+Def $\ast$}]{huart }\end{DoxyParamCaption})}
+
+HAL\+\_\+\+UART\+\_\+\+Tx\+Cplt\+Callback is triggered after end of UART Tx transmission. It zeros sent message buffer. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em huart} & is a pointer to UART handle structure \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+The application entry point. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em int} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{main_8c_a54efad17c8fe43c948873060c880d1a5}\label{main_8c_a54efad17c8fe43c948873060c880d1a5}} 
+\index{main.c@{main.c}!MX\_DFSDM1\_Init@{MX\_DFSDM1\_Init}}
+\index{MX\_DFSDM1\_Init@{MX\_DFSDM1\_Init}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{MX\_DFSDM1\_Init()}{MX\_DFSDM1\_Init()}}
+{\footnotesize\ttfamily static void MX\+\_\+\+DFSDM1\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+DFSDM1 Initialization Function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{main_8c_a608dc9e9bcaf978f1611f3ec57670f64}\label{main_8c_a608dc9e9bcaf978f1611f3ec57670f64}} 
+\index{main.c@{main.c}!MX\_DMA\_Init@{MX\_DMA\_Init}}
+\index{MX\_DMA\_Init@{MX\_DMA\_Init}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{MX\_DMA\_Init()}{MX\_DMA\_Init()}}
+{\footnotesize\ttfamily static void MX\+\_\+\+DMA\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Enable DMA controller clock \mbox{\Hypertarget{main_8c_ae89fdd15729ad41a66911190fcbab23a}\label{main_8c_ae89fdd15729ad41a66911190fcbab23a}} 
+\index{main.c@{main.c}!MX\_GPIO\_Init@{MX\_GPIO\_Init}}
+\index{MX\_GPIO\_Init@{MX\_GPIO\_Init}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{MX\_GPIO\_Init()}{MX\_GPIO\_Init()}}
+{\footnotesize\ttfamily static void MX\+\_\+\+GPIO\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+GPIO Initialization Function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{main_8c_a4230d11f81d0b16e112f1cc3f40cb42f}\label{main_8c_a4230d11f81d0b16e112f1cc3f40cb42f}} 
+\index{main.c@{main.c}!MX\_I2C1\_Init@{MX\_I2C1\_Init}}
+\index{MX\_I2C1\_Init@{MX\_I2C1\_Init}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{MX\_I2C1\_Init()}{MX\_I2C1\_Init()}}
+{\footnotesize\ttfamily static void MX\+\_\+\+I2\+C1\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+I2\+C1 Initialization Function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Configure Analogue filter
+
+Configure Digital filter\mbox{\Hypertarget{main_8c_af71812af4fbb9ebbe0f681165b657433}\label{main_8c_af71812af4fbb9ebbe0f681165b657433}} 
+\index{main.c@{main.c}!MX\_I2C2\_Init@{MX\_I2C2\_Init}}
+\index{MX\_I2C2\_Init@{MX\_I2C2\_Init}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{MX\_I2C2\_Init()}{MX\_I2C2\_Init()}}
+{\footnotesize\ttfamily static void MX\+\_\+\+I2\+C2\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+I2\+C2 Initialization Function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Configure Analogue filter
+
+Configure Digital filter\mbox{\Hypertarget{main_8c_a235a6a2390a0390247a052c05cc07dd4}\label{main_8c_a235a6a2390a0390247a052c05cc07dd4}} 
+\index{main.c@{main.c}!MX\_QUADSPI\_Init@{MX\_QUADSPI\_Init}}
+\index{MX\_QUADSPI\_Init@{MX\_QUADSPI\_Init}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{MX\_QUADSPI\_Init()}{MX\_QUADSPI\_Init()}}
+{\footnotesize\ttfamily static void MX\+\_\+\+QUADSPI\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+QUADSPI Initialization Function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{main_8c_ad13211e797777a447435fa0b54dcac7c}\label{main_8c_ad13211e797777a447435fa0b54dcac7c}} 
+\index{main.c@{main.c}!MX\_SPI3\_Init@{MX\_SPI3\_Init}}
+\index{MX\_SPI3\_Init@{MX\_SPI3\_Init}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{MX\_SPI3\_Init()}{MX\_SPI3\_Init()}}
+{\footnotesize\ttfamily static void MX\+\_\+\+SPI3\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+SPI3 Initialization Function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{main_8c_ada2fde91c9d08b4055b4d171690255d0}\label{main_8c_ada2fde91c9d08b4055b4d171690255d0}} 
+\index{main.c@{main.c}!MX\_UART4\_Init@{MX\_UART4\_Init}}
+\index{MX\_UART4\_Init@{MX\_UART4\_Init}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{MX\_UART4\_Init()}{MX\_UART4\_Init()}}
+{\footnotesize\ttfamily static void MX\+\_\+\+UART4\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+UART4 Initialization Function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{main_8c_a62f4b77e20bccafe98a183771749c20c}\label{main_8c_a62f4b77e20bccafe98a183771749c20c}} 
+\index{main.c@{main.c}!MX\_USART1\_UART\_Init@{MX\_USART1\_UART\_Init}}
+\index{MX\_USART1\_UART\_Init@{MX\_USART1\_UART\_Init}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{MX\_USART1\_UART\_Init()}{MX\_USART1\_UART\_Init()}}
+{\footnotesize\ttfamily static void MX\+\_\+\+USART1\+\_\+\+UART\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+USART1 Initialization Function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{main_8c_a1c98cc38e233c6b46ca2bf9598a5fce8}\label{main_8c_a1c98cc38e233c6b46ca2bf9598a5fce8}} 
+\index{main.c@{main.c}!MX\_USART3\_UART\_Init@{MX\_USART3\_UART\_Init}}
+\index{MX\_USART3\_UART\_Init@{MX\_USART3\_UART\_Init}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{MX\_USART3\_UART\_Init()}{MX\_USART3\_UART\_Init()}}
+{\footnotesize\ttfamily static void MX\+\_\+\+USART3\+\_\+\+UART\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+USART3 Initialization Function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{main_8c_a03b71abc2ed6e7a94a08e94b1d74542f}\label{main_8c_a03b71abc2ed6e7a94a08e94b1d74542f}} 
+\index{main.c@{main.c}!MX\_USB\_OTG\_FS\_PCD\_Init@{MX\_USB\_OTG\_FS\_PCD\_Init}}
+\index{MX\_USB\_OTG\_FS\_PCD\_Init@{MX\_USB\_OTG\_FS\_PCD\_Init}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{MX\_USB\_OTG\_FS\_PCD\_Init()}{MX\_USB\_OTG\_FS\_PCD\_Init()}}
+{\footnotesize\ttfamily static void MX\+\_\+\+USB\+\_\+\+OTG\+\_\+\+FS\+\_\+\+PCD\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+USB\+\_\+\+OTG\+\_\+\+FS Initialization Function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{main_8c_a531a08977e7977fb6f555793f2e06fb8}\label{main_8c_a531a08977e7977fb6f555793f2e06fb8}} 
+\index{main.c@{main.c}!speedometer\_CB@{speedometer\_CB}}
+\index{speedometer\_CB@{speedometer\_CB}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{speedometer\_CB()}{speedometer\_CB()}}
+{\footnotesize\ttfamily void speedometer\+\_\+\+CB (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+speedometer\+\_\+\+CB is a callback to change of speed event.
+
+It displays current speed on LCD and sends it to comport. \mbox{\Hypertarget{main_8c_ab136d3a99b92df42a34581f2e19eade7}\label{main_8c_ab136d3a99b92df42a34581f2e19eade7}} 
+\index{main.c@{main.c}!start\_measure\_speed\_CB@{start\_measure\_speed\_CB}}
+\index{start\_measure\_speed\_CB@{start\_measure\_speed\_CB}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{start\_measure\_speed\_CB()}{start\_measure\_speed\_CB()}}
+{\footnotesize\ttfamily void start\+\_\+measure\+\_\+speed\+\_\+\+CB (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+start\+\_\+measure\+\_\+speed\+\_\+\+CB is a callback function which starts acceleration measurement and register stop\+\_\+measure\+\_\+speed\+\_\+\+CB callback function when speed will exceed given value.
+
+It sets time of start measurement and registers \mbox{\hyperlink{main_8c_a12c51482ea332e9be9b144538f757fb2}{stop\+\_\+measure\+\_\+speed\+\_\+\+CB()}}. \mbox{\Hypertarget{main_8c_a12c51482ea332e9be9b144538f757fb2}\label{main_8c_a12c51482ea332e9be9b144538f757fb2}} 
+\index{main.c@{main.c}!stop\_measure\_speed\_CB@{stop\_measure\_speed\_CB}}
+\index{stop\_measure\_speed\_CB@{stop\_measure\_speed\_CB}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{stop\_measure\_speed\_CB()}{stop\_measure\_speed\_CB()}}
+{\footnotesize\ttfamily void stop\+\_\+measure\+\_\+speed\+\_\+\+CB (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+stop\+\_\+measure\+\_\+speed\+\_\+\+CB is a callback function which ends acceleration measurement and unregister CB when speed will exceed given value.
+
+It unregisters callback, calculates acceleration time, displays result on LCD and sends it to comport. \mbox{\Hypertarget{main_8c_a70af21c671abfcc773614a9a4f63d920}\label{main_8c_a70af21c671abfcc773614a9a4f63d920}} 
+\index{main.c@{main.c}!SystemClock\_Config@{SystemClock\_Config}}
+\index{SystemClock\_Config@{SystemClock\_Config}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{SystemClock\_Config()}{SystemClock\_Config()}}
+{\footnotesize\ttfamily void System\+Clock\+\_\+\+Config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+System Clock Configuration. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Configure LSE Drive Capability
+
+Initializes the RCC Oscillators according to the specified parameters in the RCC\+\_\+\+Osc\+Init\+Type\+Def structure.
+
+Initializes the CPU, AHB and APB buses clocks
+
+Configure the main internal regulator output voltage
+
+Enable MSI Auto calibration\mbox{\Hypertarget{main_8c_acbfb668d7b4cfa39aa1a5a5dac3c0e7e}\label{main_8c_acbfb668d7b4cfa39aa1a5a5dac3c0e7e}} 
+\index{main.c@{main.c}!task@{task}}
+\index{task@{task}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{task()}{task()}}
+{\footnotesize\ttfamily void task (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+task is implementation of communication protocol defined in \char`\"{}uart-\/comport.\+h\char`\"{}.
+
+If start\+\_\+tmp $<$ stop\+\_\+tmp it register \mbox{\hyperlink{main_8c_ab136d3a99b92df42a34581f2e19eade7}{start\+\_\+measure\+\_\+speed\+\_\+\+CB()}}, displays boundaries of measurement on LCD and sends suitable message to the comport.
+
+If stop\+\_\+tmp==start\+\_\+tmp it unregisters SPEED\+\_\+\+RISE\+\_\+\+BARRIER\+\_\+\+CB and sends suitable message to the comport.
+
+Else it do nothing except sending suitable message to the comport. 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{main_8c_a5531b2fb5af9f7c77f321c4a957d662b}\label{main_8c_a5531b2fb5af9f7c77f321c4a957d662b}} 
+\index{main.c@{main.c}!hdma\_uart4\_rx@{hdma\_uart4\_rx}}
+\index{hdma\_uart4\_rx@{hdma\_uart4\_rx}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{hdma\_uart4\_rx}{hdma\_uart4\_rx}}
+{\footnotesize\ttfamily DMA\+\_\+\+Handle\+Type\+Def hdma\+\_\+uart4\+\_\+rx}
+
+File Name \+: stm32l4xx\+\_\+hal\+\_\+msp.\+c Description \+: This file provides code for the MSP Initialization and de-\/\+Initialization codes.
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} Copyright (c) 2020 STMicroelectronics. All rights reserved.\end{center} }
+
+This software component is licensed by ST under BSD 3-\/Clause license, the \char`\"{}\+License\char`\"{}; You may not use this file except in compliance with the License. You may obtain a copy of the License at\+: opensource.\+org/licenses/\+BSD-\/3-\/\+Clause \mbox{\Hypertarget{main_8c_af7b2c26e44dadaaa798a5c3d82914ba7}\label{main_8c_af7b2c26e44dadaaa798a5c3d82914ba7}} 
+\index{main.c@{main.c}!hi2c1@{hi2c1}}
+\index{hi2c1@{hi2c1}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{hi2c1}{hi2c1}}
+{\footnotesize\ttfamily I2\+C\+\_\+\+Handle\+Type\+Def hi2c1}
+
+i2c handle structure for hi2c conected to LCD display \mbox{\Hypertarget{main_8c_ae5cb355aaa3865eeb63df01488001068}\label{main_8c_ae5cb355aaa3865eeb63df01488001068}} 
+\index{main.c@{main.c}!message@{message}}
+\index{message@{message}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{message}{message}}
+{\footnotesize\ttfamily uint8\+\_\+t message\mbox{[}50\mbox{]} =\{0\}}
+
+compotr UART Tx buffer which stores massage sending to comport \mbox{\Hypertarget{main_8c_a37722a150250e2a5a98e5e0d11e53449}\label{main_8c_a37722a150250e2a5a98e5e0d11e53449}} 
+\index{main.c@{main.c}!start@{start}}
+\index{start@{start}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{start}{start}}
+{\footnotesize\ttfamily int start = 0}
+
+is a start of measurement var which represents speed in kmph \mbox{\Hypertarget{main_8c_a6c0af9f2e97842405fb15ed952ef2976}\label{main_8c_a6c0af9f2e97842405fb15ed952ef2976}} 
+\index{main.c@{main.c}!stop@{stop}}
+\index{stop@{stop}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{stop}{stop}}
+{\footnotesize\ttfamily int stop = 0}
+
+is a stop of measurement var which represents speed in kmph \mbox{\Hypertarget{main_8c_a42715f65f02da52edc5b22021d8ae670}\label{main_8c_a42715f65f02da52edc5b22021d8ae670}} 
+\index{main.c@{main.c}!time@{time}}
+\index{time@{time}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{time}{time}}
+{\footnotesize\ttfamily int time}
+
+is a acceleration measurement var which represents time of acceleration in seconds 
