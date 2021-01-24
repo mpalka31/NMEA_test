@@ -144,7 +144,7 @@ typedef struct{
 	uint8_t		fix;
 	/*!	 
 	 * <pre>
-	 * Fix flag 
+	 * Fix mode 
 	 * 1 - Fix not available
 	 * 2 - 2D mode
 	 * 3 - 3D mode
@@ -175,7 +175,7 @@ typedef struct{
 
 }NMEA_data;
 /**
- * NMEA_data instantion declaration.
+ * NMEA_data instance declaration.
  */
 NMEA_data nmea_data;
 /**
@@ -190,35 +190,35 @@ typedef enum {
 /**
  * NMEA_init is a function to initialize library.\n
  * You should place it before while() loop. 
- * @param[in] 	huart 	is a pointer to UART_HandleTypeDef using yo comunicate with GPS module.
- * @param[in]	DMA		is a pointer to DMA_HandleTypeDef using to receive data from module.
+ * @param[in] 	huart 	is a pointer to UART_HandleTypeDef used to comunicate with GPS module.
+ * @param[in]	DMA		is a pointer to DMA_HandleTypeDef used to receive data from module.
  */
 void NMEA_init(UART_HandleTypeDef *huart,DMA_HandleTypeDef	*DMA);
 
 /**
- * NMEA_process_task is a function that handle the processing data from module.\n
+ * NMEA_process_task is a function that handles the processing data from module.\n
  * You should place it inside while() loop. 
- * @param[out]	NMEA_status 	is a status code. It should be NMEA_OK. For more informations check out NMEA_status documentation.
+ * @param[out]	NMEA_status 	is a status code. It should be NMEA_OK. For more information check out NMEA_status documentation.
  */
 NMEA_status NMEA_process_task(void);
 /**
- * NMEA_CB_register is a function using to register callback functions.\n
+ * NMEA_CB_register is a function used to register callback functions.\n
  * Thanks to it you can customize program behavior for incoming events and realize measurements, monitoring parameters etc.
  * @param[in]	CB_fun	is a pointer to callback function which will be triggered after specified event. 
- * @param[in]	CB_id	is a NMEA_CB_ID which specify event.
+ * @param[in]	CB_id	is a NMEA_CB_ID which specifies event.
  * @param[in]	barrier	is a float value determining if the cb should be triggered or not (speed barrier, delta of speed etc).
- * @param[out]	NMEA_status 	is a status code. It should be NMEA_OK. For more informations check out NMEA_status documentation.
+ * @param[out]	NMEA_status 	is a status code. It should be NMEA_OK. For more information check out NMEA_status documentation.
  */
 NMEA_status NMEA_CB_register(void (*CB_fun)(void),NMEA_CB_ID CB_id,float barier);
 /**
- * NMEA_CB_unregister is a function using to unregister specified callback function.\n
- * Thanks to it you delete setted callback. 
- * @param[in]	CB_id	is a NMEA_CB_ID which specify event.
- * @param[out]	NMEA_status 	is a status code. It should be NMEA_OK. For more informations check out NMEA_status documentation.
+ * NMEA_CB_unregister is a function used to unregister specified callback function.\n
+ * Thanks to it you delete selected callback. 
+ * @param[in]	CB_id	is a NMEA_CB_ID which specifies event.
+ * @param[out]	NMEA_status 	is a status code. It should be NMEA_OK. For more information check out NMEA_status documentation.
  */
 NMEA_status NMEA_CB_unregister(NMEA_CB_ID CB_id);
 /**
- * user_IDLE_IT_handler is a function that detects UART idle IT and handle it.\n
+ * user_IDLE_IT_handler is a function that detects UART idle IT and handles it.\n
  * It should be used in void "UARTX_IRQHandler(void)" from "stm32XXxx_it.c" file like this:
  *@code
 void UART4_IRQHandler(void)
