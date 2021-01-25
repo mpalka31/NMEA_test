@@ -25,6 +25,8 @@ void \mbox{\hyperlink{uart-comport_8c_a57e6636d5b06b085ccd24ab3857e6b19}{uart\+\
 static uint8\+\_\+t \mbox{\hyperlink{uart-comport_8c_a1e883f39d56bb3dd769123f2b951e50d}{comand\+\_\+\+RX}} \mbox{[}COM\+\_\+\+LEN\mbox{]} =\{0\}
 \item 
 static bool \mbox{\hyperlink{uart-comport_8c_a6b4bce936c510120447c9171f10a8b0f}{DAV\+\_\+flag}} = false
+\item 
+uint8\+\_\+t \mbox{\hyperlink{uart-comport_8c_af2e9ae4c4e3d4330f1ba90f690c1b6df}{uart\+\_\+\+Tx\+\_\+flag}} = 0
 \end{DoxyCompactItemize}
 
 
@@ -99,4 +101,10 @@ UART Rx buffer \mbox{\Hypertarget{uart-comport_8c_a6b4bce936c510120447c9171f10a8
 \doxysubsubsection{\texorpdfstring{DAV\_flag}{DAV\_flag}}
 {\footnotesize\ttfamily bool DAV\+\_\+flag = false\hspace{0.3cm}{\ttfamily [static]}}
 
-data valid flag. When true, uart\+\_\+comport\+\_\+task will triggered \mbox{\hyperlink{main_8c_acbfb668d7b4cfa39aa1a5a5dac3c0e7e}{task()}} function. 
+data valid flag. When true, uart\+\_\+comport\+\_\+task will triggered \mbox{\hyperlink{main_8c_acbfb668d7b4cfa39aa1a5a5dac3c0e7e}{task()}} function. \mbox{\Hypertarget{uart-comport_8c_af2e9ae4c4e3d4330f1ba90f690c1b6df}\label{uart-comport_8c_af2e9ae4c4e3d4330f1ba90f690c1b6df}} 
+\index{uart-\/comport.c@{uart-\/comport.c}!uart\_Tx\_flag@{uart\_Tx\_flag}}
+\index{uart\_Tx\_flag@{uart\_Tx\_flag}!uart-\/comport.c@{uart-\/comport.c}}
+\doxysubsubsection{\texorpdfstring{uart\_Tx\_flag}{uart\_Tx\_flag}}
+{\footnotesize\ttfamily uint8\+\_\+t uart\+\_\+\+Tx\+\_\+flag = 0}
+
+UATR Tx transmission availability flag 

@@ -13,6 +13,8 @@ static uint8_t comand_RX[COM_LEN]={0};	/**< UART Rx buffer*/
 
 static bool DAV_flag = false;	/**< data valid flag. When true, uart_comport_task will triggered task() function.*/
 
+uint8_t uart_Tx_flag = 0;	/**< UATR Tx transmission availability flag*/
+
 void uatr_comport_comunication_init(UART_HandleTypeDef *huart){
 	com_huart = huart;
 	HAL_UART_Receive_IT(com_huart, comand_RX, COM_LEN);
@@ -31,6 +33,7 @@ void uatr_comport_read_data(){
 
 void uatr_comport_send_data(uint8_t* data, uint8_t data_len){
 	HAL_UART_Transmit_IT(com_huart, data, data_len);
+	uart_Tx_flag=1;
 }
 
 void uart_comport_task(void (*task)(void)){

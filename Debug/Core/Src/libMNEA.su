@@ -1,2 +1,0 @@
-libMNEA.c:19:6:MNEA_init	16	static
-libMNEA.c:27:13:MNEA_get_UART_char	8	static

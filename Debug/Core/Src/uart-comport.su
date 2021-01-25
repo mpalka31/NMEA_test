@@ -1,4 +1,4 @@
-uart-comport.c:16:6:uatr_comport_comunication_init	16	static
-uart-comport.c:21:6:uatr_comport_read_data	16	static
-uart-comport.c:32:6:uatr_comport_send_data	16	static
-uart-comport.c:36:6:uart_comport_task	16	static
+uart-comport.c:18:6:uatr_comport_comunication_init	16	static
+uart-comport.c:23:6:uatr_comport_read_data	16	static
+uart-comport.c:34:6:uatr_comport_send_data	16	static
+uart-comport.c:39:6:uart_comport_task	16	static

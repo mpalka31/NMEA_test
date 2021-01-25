@@ -59,7 +59,8 @@ DMA_HandleTypeDef hdma_uart4_rx;
 PCD_HandleTypeDef hpcd_USB_OTG_FS;
 
 /* USER CODE BEGIN PV */
-
+extern uint8_t uart_Tx_flag;
+extern uint8_t i2c_Tx_flag;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -99,7 +100,10 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
  * @param[in]	huart	is a pointer to UART handle structure
  */
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart){
-	if(huart == &huart1) memset((char*)message,0,50);
+	if(huart == &huart1){
+		memset((char*)message,0,50);
+		uart_Tx_flag=0;
+	}
 }
 /**
  * stop_measure_speed_CB is a callback function which ends acceleration measurement and unregister CB when speed will exceed given value.
@@ -109,12 +113,14 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart){
 void stop_measure_speed_CB(void){
 	time = nmea_data.UTC_time - time;
 	NMEA_CB_unregister(SPEED_RISE_BARRIER_CB);
-	lcd_put_cur(1, 0);
+	while(uart_Tx_flag){}
+	sprintf((char*)message,"%d-%d: %d s\n",start,stop,time);
+	uatr_comport_send_data(message, strlen((char*)message));
 	char data[16]={0};
 	sprintf(data,"%d-%d: %d s",start,stop,time);
+	while(i2c_Tx_flag){}
+	lcd_put_cur(1, 0);
 	lcd_send_string(data);
-	sprintf((char*)message,"%d-%d: %d s",start,stop,time);
-	uatr_comport_send_data(message, strlen((char*)message));
 }
 /**
  * start_measure_speed_CB is a callback function which starts acceleration measurement and register stop_measure_speed_CB callback function when speed will exceed given value.
@@ -143,21 +149,22 @@ void task(void){
 	  stop=stop_tmp;
 	  NMEA_CB_register(&start_measure_speed_CB, SPEED_RISE_BARRIER_CB, start);
 
+	  sprintf((char *)message, "measurement accepted\n");
+	  uatr_comport_send_data(message, strlen((char *)message));
+
 	  char data[16]={0};
 	  sprintf(data,"%d-%d:",start,stop);
-
 	  lcd_put_cur(1, 0);
 	  lcd_send_string(data);
 
-	  sprintf((char *)message, "measurement accepted\n");
-	  uatr_comport_send_data(message, strlen((char *)message));
   }else if (stop_tmp==start_tmp){
 	  NMEA_CB_unregister(SPEED_RISE_BARRIER_CB);
-	  lcd_put_cur(1, 0);
-	  lcd_send_string("        ");
 
 	  sprintf((char *)message, "measurement cancelled\n");
 	  uatr_comport_send_data(message, strlen((char *)message));
+
+	  lcd_put_cur(1, 0);
+	  lcd_send_string("                ");
   }else {
 	  sprintf((char *)message, "stop %d less then start %d\n",stop_tmp,start_tmp);
 	  uatr_comport_send_data(message, strlen((char *)message));
@@ -170,11 +177,11 @@ void task(void){
  */
 void speedometer_CB(void){
 	char speed[5]={0};
+	sprintf((char*)message,"speed: %3.0f km/h \n",nmea_data.speed_kmph);
+	uatr_comport_send_data(message, strlen((char*)message));
 	sprintf(speed,"%3.0f",nmea_data.speed_kmph);
 	lcd_put_cur(0, 7);
 	lcd_send_string(speed);
-	sprintf((char*)message,"speed: %3.0f km/h \n",nmea_data.speed_kmph);
-	uatr_comport_send_data(message, strlen((char*)message));
 }
 /* USER CODE END 0 */
 

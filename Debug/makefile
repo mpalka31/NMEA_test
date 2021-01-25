@@ -54,8 +54,8 @@ all: main-build
 main-build: NMEA_test.elf secondary-outputs
 
 # Tool invocations
-NMEA_test.elf: $(OBJS) $(USER_OBJS) /home/mpalka/STM32CubeIDE/workspace_1.4.0/project_workspace/NMEA_test/STM32L475VGTX_FLASH.ld
-	arm-none-eabi-gcc -o "NMEA_test.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/mpalka/STM32CubeIDE/workspace_1.4.0/project_workspace/NMEA_test/STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NMEA_test.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+NMEA_test.elf: $(OBJS) $(USER_OBJS) /home/mpalka/Desktop/STUDIA/SEM_5/PMiK/NMEA_test/STM32L475VGTX_FLASH.ld
+	arm-none-eabi-gcc -o "NMEA_test.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/mpalka/Desktop/STUDIA/SEM_5/PMiK/NMEA_test/STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NMEA_test.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

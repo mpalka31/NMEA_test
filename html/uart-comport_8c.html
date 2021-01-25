@@ -99,6 +99,8 @@ Variables</h2></td></tr>
 <tr class="separator:a1e883f39d56bb3dd769123f2b951e50d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b4bce936c510120447c9171f10a8b0f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uart-comport_8c.html#a6b4bce936c510120447c9171f10a8b0f">DAV_flag</a> = false</td></tr>
 <tr class="separator:a6b4bce936c510120447c9171f10a8b0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2e9ae4c4e3d4330f1ba90f690c1b6df"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uart-comport_8c.html#af2e9ae4c4e3d4330f1ba90f690c1b6df">uart_Tx_flag</a> = 0</td></tr>
+<tr class="separator:af2e9ae4c4e3d4330f1ba90f690c1b6df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Michał Pałka</dd></dl>
@@ -207,8 +209,8 @@ Variables</h2></td></tr>
 <div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(huart == &amp;huart1) <a class="code" href="uart-comport_8c.html#a095104a7832f1ee7897ecab94c3b0256">uatr_comport_read_data</a>();</div>
 <div class="line">}</div>
-<div class="ttc" id="amain_8c_html_ae494a9643f29b87d6d81e5264e60e57b"><div class="ttname"><a href="main_8c.html#ae494a9643f29b87d6d81e5264e60e57b">HAL_UART_RxCpltCallback</a></div><div class="ttdeci">void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)</div><div class="ttdef"><b>Definition:</b> main.c:93</div></div>
-<div class="ttc" id="auart-comport_8c_html_a095104a7832f1ee7897ecab94c3b0256"><div class="ttname"><a href="uart-comport_8c.html#a095104a7832f1ee7897ecab94c3b0256">uatr_comport_read_data</a></div><div class="ttdeci">void uatr_comport_read_data()</div><div class="ttdef"><b>Definition:</b> uart-comport.c:21</div></div>
+<div class="ttc" id="amain_8c_html_ae494a9643f29b87d6d81e5264e60e57b"><div class="ttname"><a href="main_8c.html#ae494a9643f29b87d6d81e5264e60e57b">HAL_UART_RxCpltCallback</a></div><div class="ttdeci">void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)</div><div class="ttdef"><b>Definition:</b> main.c:94</div></div>
+<div class="ttc" id="auart-comport_8c_html_a095104a7832f1ee7897ecab94c3b0256"><div class="ttname"><a href="uart-comport_8c.html#a095104a7832f1ee7897ecab94c3b0256">uatr_comport_read_data</a></div><div class="ttdeci">void uatr_comport_read_data()</div><div class="ttdef"><b>Definition:</b> uart-comport.c:23</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -256,6 +258,21 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>data valid flag. When true, uart_comport_task will triggered <a class="el" href="main_8c.html#acbfb668d7b4cfa39aa1a5a5dac3c0e7e">task()</a> function. </p>
+
+</div>
+</div>
+<a id="af2e9ae4c4e3d4330f1ba90f690c1b6df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2e9ae4c4e3d4330f1ba90f690c1b6df">&#9670;&nbsp;</a></span>uart_Tx_flag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t uart_Tx_flag = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>UATR Tx transmission availability flag </p>
 
 </div>
 </div>

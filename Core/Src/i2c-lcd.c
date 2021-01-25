@@ -14,6 +14,8 @@ extern I2C_HandleTypeDef hi2c1;  // change your handler here accordingly
 
 #define SLAVE_ADDRESS_LCD 0x4E // change this according to ur setup
 
+uint8_t i2c_Tx_flag=0;	/**< i2c Tx transmission availability flag*/
+
 void lcd_send_cmd (char cmd)
 {
     char data_u, data_l;
@@ -81,7 +83,7 @@ void lcd_init (void)
 	lcd_send_cmd (0x20);  // 4bit mode
 	HAL_Delay(10);
 
-  // dislay initialisation
+  // display initialisation
 	lcd_send_cmd (0x28); // Function set --> DL=0 (4 bit mode), N = 1 (2 line display) F = 0 (5x8 characters)
 	HAL_Delay(1);
 	lcd_send_cmd (0x08); //Display on/off control --> D=0,C=0, B=0  ---> display off
@@ -98,6 +100,7 @@ void lcd_send_string (char *str)
 	id=0;
 	while (*str) lcd_send_data (*str++);
 	HAL_I2C_Master_Transmit_IT (&hi2c1, SLAVE_ADDRESS_LCD,(uint8_t *) data_to_sent, strlen(data_to_sent));
+	i2c_Tx_flag=1;
 }
 
 /**
@@ -107,5 +110,6 @@ void lcd_send_string (char *str)
 void HAL_I2C_MasterTxCpltCallback (I2C_HandleTypeDef * hi2c){
 	if (hi2c==&hi2c1){
 		memset(&data_to_sent,0,32*4);
+		i2c_Tx_flag=0;
 	}
 }

@@ -82,6 +82,10 @@ DMA\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8c_a5531b2fb5af9f7c77f321c4a9
 \mbox{\Hypertarget{main_8c_a3ec0d70a6cb9406d997fb3d006cc940d}\label{main_8c_a3ec0d70a6cb9406d997fb3d006cc940d}} 
 PCD\+\_\+\+Handle\+Type\+Def {\bfseries hpcd\+\_\+\+USB\+\_\+\+OTG\+\_\+\+FS}
 \item 
+uint8\+\_\+t \mbox{\hyperlink{main_8c_af2e9ae4c4e3d4330f1ba90f690c1b6df}{uart\+\_\+\+Tx\+\_\+flag}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{main_8c_a8f76fe58d0a16aea14b5b03bf7e450b4}{i2c\+\_\+\+Tx\+\_\+flag}}
+\item 
 int \mbox{\hyperlink{main_8c_a42715f65f02da52edc5b22021d8ae670}{time}}
 \item 
 int \mbox{\hyperlink{main_8c_a37722a150250e2a5a98e5e0d11e53449}{start}} = 0
@@ -449,7 +453,13 @@ This software component is licensed by ST under BSD 3-\/Clause license, the \cha
 \doxysubsubsection{\texorpdfstring{hi2c1}{hi2c1}}
 {\footnotesize\ttfamily I2\+C\+\_\+\+Handle\+Type\+Def hi2c1}
 
-i2c handle structure for hi2c conected to LCD display \mbox{\Hypertarget{main_8c_ae5cb355aaa3865eeb63df01488001068}\label{main_8c_ae5cb355aaa3865eeb63df01488001068}} 
+i2c handle structure for hi2c conected to LCD display \mbox{\Hypertarget{main_8c_a8f76fe58d0a16aea14b5b03bf7e450b4}\label{main_8c_a8f76fe58d0a16aea14b5b03bf7e450b4}} 
+\index{main.c@{main.c}!i2c\_Tx\_flag@{i2c\_Tx\_flag}}
+\index{i2c\_Tx\_flag@{i2c\_Tx\_flag}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{i2c\_Tx\_flag}{i2c\_Tx\_flag}}
+{\footnotesize\ttfamily uint8\+\_\+t i2c\+\_\+\+Tx\+\_\+flag\hspace{0.3cm}{\ttfamily [extern]}}
+
+i2c Tx transmission availability flag \mbox{\Hypertarget{main_8c_ae5cb355aaa3865eeb63df01488001068}\label{main_8c_ae5cb355aaa3865eeb63df01488001068}} 
 \index{main.c@{main.c}!message@{message}}
 \index{message@{message}!main.c@{main.c}}
 \doxysubsubsection{\texorpdfstring{message}{message}}
@@ -473,4 +483,10 @@ is a stop of measurement var which represents speed in kmph \mbox{\Hypertarget{m
 \doxysubsubsection{\texorpdfstring{time}{time}}
 {\footnotesize\ttfamily int time}
 
-is a acceleration measurement var which represents time of acceleration in seconds 
+is a acceleration measurement var which represents time of acceleration in seconds \mbox{\Hypertarget{main_8c_af2e9ae4c4e3d4330f1ba90f690c1b6df}\label{main_8c_af2e9ae4c4e3d4330f1ba90f690c1b6df}} 
+\index{main.c@{main.c}!uart\_Tx\_flag@{uart\_Tx\_flag}}
+\index{uart\_Tx\_flag@{uart\_Tx\_flag}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{uart\_Tx\_flag}{uart\_Tx\_flag}}
+{\footnotesize\ttfamily uint8\+\_\+t uart\+\_\+\+Tx\+\_\+flag\hspace{0.3cm}{\ttfamily [extern]}}
+
+UATR Tx transmission availability flag 

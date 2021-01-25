@@ -31,6 +31,8 @@ void \mbox{\hyperlink{i2c-lcd_8c_aa258e0eb52bbc34002a46dc2db89a84b}{HAL\+\_\+\+I
 \item 
 I2\+C\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{i2c-lcd_8c_af7b2c26e44dadaaa798a5c3d82914ba7}{hi2c1}}
 \item 
+uint8\+\_\+t \mbox{\hyperlink{i2c-lcd_8c_a8f76fe58d0a16aea14b5b03bf7e450b4}{i2c\+\_\+\+Tx\+\_\+flag}} =0
+\item 
 char \mbox{\hyperlink{i2c-lcd_8c_a0b0454511d8d8d8dec74da7d0f7de4ac}{data\+\_\+to\+\_\+sent}} \mbox{[}32 $\ast$4\mbox{]} =\{0\}
 \item 
 uint8\+\_\+t \mbox{\hyperlink{i2c-lcd_8c_a1e6927fa1486224044e568f9c370519b}{id}}
@@ -124,7 +126,13 @@ i2c Tx buffer \mbox{\Hypertarget{i2c-lcd_8c_af7b2c26e44dadaaa798a5c3d82914ba7}\l
 \doxysubsubsection{\texorpdfstring{hi2c1}{hi2c1}}
 {\footnotesize\ttfamily I2\+C\+\_\+\+Handle\+Type\+Def hi2c1\hspace{0.3cm}{\ttfamily [extern]}}
 
-i2c handle structure for hi2c conected to LCD display \mbox{\Hypertarget{i2c-lcd_8c_a1e6927fa1486224044e568f9c370519b}\label{i2c-lcd_8c_a1e6927fa1486224044e568f9c370519b}} 
+i2c handle structure for hi2c conected to LCD display \mbox{\Hypertarget{i2c-lcd_8c_a8f76fe58d0a16aea14b5b03bf7e450b4}\label{i2c-lcd_8c_a8f76fe58d0a16aea14b5b03bf7e450b4}} 
+\index{i2c-\/lcd.c@{i2c-\/lcd.c}!i2c\_Tx\_flag@{i2c\_Tx\_flag}}
+\index{i2c\_Tx\_flag@{i2c\_Tx\_flag}!i2c-\/lcd.c@{i2c-\/lcd.c}}
+\doxysubsubsection{\texorpdfstring{i2c\_Tx\_flag}{i2c\_Tx\_flag}}
+{\footnotesize\ttfamily uint8\+\_\+t i2c\+\_\+\+Tx\+\_\+flag =0}
+
+i2c Tx transmission availability flag \mbox{\Hypertarget{i2c-lcd_8c_a1e6927fa1486224044e568f9c370519b}\label{i2c-lcd_8c_a1e6927fa1486224044e568f9c370519b}} 
 \index{i2c-\/lcd.c@{i2c-\/lcd.c}!id@{id}}
 \index{id@{id}!i2c-\/lcd.c@{i2c-\/lcd.c}}
 \doxysubsubsection{\texorpdfstring{id}{id}}
