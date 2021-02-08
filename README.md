@@ -14,3 +14,5 @@ It can be any other module which uses NMEA protocol and UATR to communicate.
 
 It is free and powerful IDE from ST but project can be easily moved to Keli or any other IDE
 
+### Documentation
+This project is documented using Doxygen. Please generate and read documentation.
